@@ -7,12 +7,12 @@ customer_only();
 require "util/validate.php";
 require "util/forms.php";
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  $fname = $_POST["fname"] ?? "";
-  $lname = $_POST["lname"] ?? "";
-  $phone = $_POST["phone"] ?? "";
-  $email = $_POST["email"] ?? "";
+$fname = $_POST["fname"] ?? "";
+$lname = $_POST["lname"] ?? "";
+$phone = $_POST["phone"] ?? "";
+$email = $_POST["email"] ?? "";
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   // Input validation
   $valid = true;
   $valid = isValidName($fname, 'First Name', $errs[]) && $valid;
@@ -124,9 +124,8 @@ if (isset($error))
         <label for="phone-input">Phone number</label>
         <input class="form-control" type="text" id="phone-input" name="phone" <?= inject_value($phone) ?>>
       </div>
-      <div class="form-group">Already have an account? <a href="./login.php">Log in</a> </div>
       <div class="form-group">
-        <button type="submit" class="btn btn-primary">Sign in</button>
+        <button type="submit" class="btn btn-primary float-right"> Update profile </button>
       </div>
     </div>
   </div>

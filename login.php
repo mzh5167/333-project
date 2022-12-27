@@ -9,10 +9,10 @@ if (loggedIn()) {
 require "connection.php";
 require "util/forms.php";
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  $email = $_POST['email'] ?? "";
-  $password = $_POST['password'] ?? "";
+$email = $_POST['email'] ?? "";
+$password = $_POST['password'] ?? "";
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $valid = true;
   if ($email == "") {
     $errs[] = "Missing email";

@@ -9,13 +9,13 @@ if (loggedIn()) {
 require "util/validate.php";
 require "util/forms.php";
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  $fname = $_POST["fname"] ?? "";
-  $lname = $_POST["lname"] ?? "";
-  $phone = $_POST["phone"] ?? "";
-  $email = $_POST["email"] ?? "";
-  $password = $_POST["password"] ?? "";
+$fname = $_POST["fname"] ?? "";
+$lname = $_POST["lname"] ?? "";
+$phone = $_POST["phone"] ?? "";
+$email = $_POST["email"] ?? "";
+$password = $_POST["password"] ?? "";
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   // Input validation
   $valid = true;
   $valid = isValidName($fname, 'First Name', $errs[]) && $valid;

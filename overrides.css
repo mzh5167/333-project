@@ -177,6 +177,10 @@ a.dropdown-item {
     background-color: var(--pink--custom-100) !important;
 }
 
+/* by me */
+.dropdown-divider {
+    border-color: var(--gray-300);
+}
 
 
 

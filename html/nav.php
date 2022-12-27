@@ -3,8 +3,10 @@
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <a class="navbar-brand" href="./home.php">SPACE</a>
+  <?php if (isAdmin()) : ?>
+    <a class="nav-link ml-auto" style="color: inherit" href="./logout.php">Log out</a>
+  <?php else : ?>
 
-  <?php if (!isAdmin()) : ?>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
 
