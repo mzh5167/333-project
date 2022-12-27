@@ -9,9 +9,9 @@ if (!isset($_POST["rid"])) {
 if (!preg_match("/^[12345]$/", $_POST['rating'])) {
     header("location:history.php");
 }
-require 'connection.php';
+require("connection.php");
 try {
-    $stmt = $db->prepare("UPDATE reservation SET rating = ? WHERE rid = ?");
+    $stmt = $db->prepare("UPDATE reservation SET rating = CASE WHEN date < NOW() THEN ? ELSE rating END WHERE rid = ?");
     $stmt->bindValue(1, $_POST['rating']);
     $stmt->bindValue(2, $_POST['rid']);
     $stmt->execute();
