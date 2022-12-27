@@ -45,6 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Log user in
     session_start();
     $_SESSION['userId'] = $db->lastInsertId();
+    $_SESSION['name'] = $fname;
     $_SESSION['userType'] = 'customer';
     header("location: ./");
     die();

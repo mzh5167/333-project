@@ -2,7 +2,6 @@
 include('connection.php');
 try {
   $error = 0;
-  $mode = "user";
 
   $sql = "SELECT p.pid,p.name,p.category,p.price,p.image,AVG(rating)
   FROM places p

@@ -1,7 +1,6 @@
 <?php
 require('connection.php');
 try {
-    $mode = 'user';
     if (!isset($_GET['id']))
         die("Place id was not provided");
     $pid = $_GET['id'];

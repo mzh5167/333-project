@@ -20,7 +20,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     goto output_begin;
 
   try {
-    $query = $db->prepare("SELECT `password`, `uid` AS id FROM `users` WHERE email=?");
+    // Validate admin
+    $admins = require 'util/admins.php';
+    if (
+      isset($admins[$email]) &&
+      password_verify($password, $admins[$email])
+    ) {
+      session_start();
+      $_SESSION['userType'] = 'admin';
+      header("location: ./");
+    }
+
+    // Validate customers
+    $query = $db->prepare("SELECT `password`, `uid` AS id, fname FROM `users` WHERE email=?");
 
     $status = $query->execute([
       $email
@@ -28,6 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($query->rowCount() === 0) {
       // $error = "Email not found";
       $errs[] = "Invalid email or password";
+      $valid = false;
       goto output_begin;
     }
 
@@ -40,9 +53,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       session_start();
       $_SESSION['userId'] = $row['id'];
       $_SESSION['userType'] = 'customer';
+      $_SESSION['name'] = $row['fname'];
       header("location: ./");
     } else {
       $errs[] = "Invalid email or password";
+      $valid = false;
       goto output_begin;
     }
   } catch (PDOException $e) {
@@ -67,7 +82,7 @@ if (isset($error))
         <label class="col-md-3 col-form-label" for="email-input">Email</label>
         <div class="col-md-9">
           <input type="text" class="form-control" id="email-input" name="email" autocomplete="off" <?=
-            inject_value($email) ?>>
+                                                                                                    inject_value($email) ?>>
         </div>
       </div>
       <div class="form-group row">
