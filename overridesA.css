@@ -1,0 +1,168 @@
+:root {
+    --black: #202037;
+    --gray-900: #2E2E43;
+    --gray-800: #3B3C50;
+    --gray-700: #494A5C;
+    --gray-600: #565869;
+    --gray-500: #646675;
+    --gray-400: #727381;
+    --gray-300: #7F818E;
+    --gray-200: #8D8F9A;
+    --gray-100: #9A9DA7;
+    --white: #c9cdd8;
+    --purple--custom: #5D567F;
+    --pink--custom: #967ead;
+    --pink--custom-100: #7e718c;
+    --teal--custom: #7AB8C2;
+    --teal--custom-100: #5A98A2;
+}
+
+body {
+    color: var(--white);
+    background-color: var(--black);
+}
+
+.card-body {
+    background-color: #2E2E43;
+}
+
+.border {
+    border-color: var(--gray-800) !important;
+}
+
+.text-light {
+    color: var(--white) !important;
+}
+
+.form-control {
+    background-color: var(--black);
+    border-color: var(--gray-800);
+    color: var(--gray-100) !important;
+}
+
+.form-control:focus {
+    background-color: var(--black);
+    border-color: var(--gray-800);
+    /* box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%); */
+}
+
+.btn-primary {
+    background-color: var(--teal--custom) !important;
+    border-color: var(--teal--custom) !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+    background-color: var(--teal--custom-100) !important;
+    border-color: var(--teal--custom-100) !important;
+}
+
+.btn-info,
+input:checked~.btn-outline-primary {
+    background-color: var(--pink--custom) !important;
+    border-color: var(--pink--custom) !important;
+    color: var(--white) !important;
+}
+
+.btn-info:hover,
+input:checked~.btn-outline-primary:hover,
+.btn-info:focus,
+input:checked~.btn-outline-primary:focus,
+.btn-info:active,
+input:checked~.btn-outline-primary:active {
+    background-color: var(--pink--custom-100) !important;
+    border-color: var(--pink--custom-100) !important;
+}
+
+.btn-outline-primary {
+    background-color: transparent !important;
+    ;
+    border-color: var(--purple--custom) !important;
+    color: var(--purple--custom) !important;
+}
+
+.btn-secondary {
+    background-color: var(--white) !important;
+    border-color: var(--white) !important;
+    color: var(--black) !important;
+}
+
+input:checked~.btn-secondary {
+    background-color: var(--gray-500) !important;
+    border-color: var(--gray-500) !important;
+    color: var(--white) !important;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus,
+.btn-secondary:active {
+    background-color: var(--gray-100) !important;
+    border-color: var(--gray-100) !important;
+    color: var(--black) !important;
+}
+
+.custom-control-label::before {
+    background-color: var(--gray-800);
+    border-color: var(--gray-900);
+}
+
+.input-group-prepend {
+    background-color: var(--gray-800) !important;
+}
+
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+    background-color: var(--gray-900) !important;
+    color: var(--gray-100);
+    /* for some reason bootstrap uses three border colors */
+    border-color: var(--gray-700) var(--gray-700) var(--gray-800);
+}
+
+.nav-tabs {
+    border-bottom-color: var(--gray-800);
+}
+
+.nav-tabs .nav-link {
+    color: var(--gray-400);
+}
+
+.nav-tabs .nav-link:focus,
+.nav-tabs .nav-link:hover {
+    border-color: transparent;
+}
+
+.navbar .navbar-expand-lg .navbar-light .bg-light {
+    background-color: var(--pink--custom-100);
+}
+
+.navbar {
+    background-color: var( --purple--custom) !important;
+}
+
+
+/* by Zeena! */
+
+.dropdown-menu,
+.list-group-item {
+    background-color: var(--purple--custom) !important;
+    border: none;
+    color: var(--white) !important;
+}
+
+#max,
+#live_search,
+#min.form-control {
+    /* background-color: var(--black); */
+    background-color: #433e62 !important;
+    border-color: var(--gray-800);
+    color: var(--white) !important;
+}
+
+a.dropdown-item {
+    color: var(--white) !important;
+}
+
+.dropdown-item:hover {
+    background-color: var(--pink--custom-100) !important;
+}
