@@ -63,32 +63,36 @@ body {
     border-color: var(--teal--custom-100) !important;
 }
 
-.btn-info,input:checked ~ .btn-outline-primary {
+.btn-info,
+input:checked~.btn-outline-primary {
     background-color: var(--pink--custom) !important;
     border-color: var(--pink--custom) !important;
     color: var(--white) !important;
 }
 
-.btn-info:hover,input:checked ~ .btn-outline-primary:hover,
-.btn-info:focus,input:checked ~ .btn-outline-primary:focus,
-.btn-info:active,input:checked ~ .btn-outline-primary:active {
-      background-color: var(--pink--custom-100) !important;
-      border-color: var(--pink--custom-100) !important;
+.btn-info:hover,
+input:checked~.btn-outline-primary:hover,
+.btn-info:focus,
+input:checked~.btn-outline-primary:focus,
+.btn-info:active,
+input:checked~.btn-outline-primary:active {
+    background-color: var(--pink--custom-100) !important;
+    border-color: var(--pink--custom-100) !important;
 }
 
 .btn-outline-primary {
-    background-color: transparent !important;;
+    background-color: transparent !important;
     border-color: var(--purple--custom) !important;
     color: var(--purple--custom) !important;
 }
 
-.btn-secondary{
+.btn-secondary {
     background-color: var(--white) !important;
     border-color: var(--white) !important;
     color: var(--black) !important;
 }
 
-input:checked ~ .btn-secondary{
+input:checked~.btn-secondary {
     background-color: var(--gray-500) !important;
     border-color: var(--gray-500) !important;
     color: var(--white) !important;
@@ -132,18 +136,30 @@ input:checked ~ .btn-secondary{
     border-color: transparent;
 }
 
-.navbar .navbar-expand-lg .navbar-light .bg-light{
+.navbar .navbar-expand-lg .navbar-light .bg-light {
     background-color: var(--pink--custom-100);
 }
-.navbar{
-    background-color: var( --purple--custom) !important;
 
-}
-/* by Zeena! */
-.dropdown-menu,
- .list-group-item{
+.navbar {
     background-color: var(--purple--custom) !important;
-    border:none;
+}
+
+
+/* by Zeena! */
+
+.dropdown-menu,
+.list-group-item {
+    background-color: var(--purple--custom) !important;
+    border: none;
+    color: var(--white) !important;
+}
+
+#max,
+#live_search,
+#min.form-control {
+    /* background-color: var(--black); */
+    background-color: #433e62 !important;
+    border-color: var(--gray-800);
     color: var(--white) !important;
 }
 
@@ -153,15 +169,15 @@ input:checked ~ .btn-secondary{
 }
      */
 
- a.dropdown-item{
+a.dropdown-item {
     color: var(--white) !important;
 }
 
-.dropdown-item:hover{
+.dropdown-item:hover {
     background-color: var(--pink--custom-100) !important;
- } 
+}
 
- 
+
 
 
 
@@ -170,11 +186,12 @@ form {
     margin-block-end: 0;
 }
 
-.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
     background-color: var(--gray-800);
     color: var(--white);
 }
-.nav-pills button{
+
+.nav-pills button {
     color: var(--white);
 }
-

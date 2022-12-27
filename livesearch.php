@@ -4,7 +4,11 @@ try {
   if (isset($_POST['input'])) {
     $input = $_POST['input'];
 
-    $query = $db->query("SELECT * FROM places WHERE name LIKE '%{$input}%'");
+    $sql = "SELECT * FROM places WHERE name LIKE ?;";
+    $query = $db->prepare($sql);
+    $query->bindValue(1, "%$input%");
+
+    $query->execute();
 
     if ($query->rowCount() > 0) {
       foreach ($query as $value) {

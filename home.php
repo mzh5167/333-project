@@ -5,8 +5,6 @@ include('search-filter.php');
 
 <?php require 'html/document_before.php' ?>
 
-<!-- jumbotron -->
-<!-- <div class="container py-5 align-items-center text-center"> -->
 <div class="container align-items-center text-center" style="max-width: var(--breakpoint-md);">
   <div class="jumbotron bg-transparent mb-5">
 
@@ -67,5 +65,7 @@ include('search-filter.php');
     </div>
   </div>
 </div>
+
+<script src="./liveSearch.js"></script>
 
 <?php require 'html/document_after.php' ?>
