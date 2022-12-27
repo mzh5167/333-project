@@ -1,9 +1,10 @@
-<?php session_start() ?>
+<?php require_once 'util/access.php'; ?>
+
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <a class="navbar-brand" href="./home.php">SPACE</a>
 
-  <?php if (!isset($_SESSION['userType']) || $_SESSION['userType'] != 'admin') : ?>
+  <?php if (!isAdmin()) : ?>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
 
@@ -12,12 +13,12 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <!-- guest mode -->
-        <?php if (!isset($_SESSION['userType'])) : ?>
+        <?php if (!loggedIn()) : ?>
           <li class="nav-item">
             <a class="nav-link" href="./login.php">Login</a>
           </li>
-          <!-- user mode -->
-        <?php elseif ($_SESSION['userType'] == 'customer') : ?>
+          <!-- customer mode -->
+        <?php elseif (isCustomer()) : ?>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle " href="#" role="button" data-toggle="dropdown" aria-expanded="false">
               <i class="bi bi-person"></i>

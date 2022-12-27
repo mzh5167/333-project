@@ -1,5 +1,11 @@
 <?php
 
+require_once 'util/access.php';
+if (loggedIn()) {
+  header('location: home.php');
+  die();
+}
+
 require "connection.php";
 require "util/forms.php";
 

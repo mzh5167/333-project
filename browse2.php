@@ -1,4 +1,7 @@
 <?php
+require 'util/access.php';
+AnyNotAdmin();
+
 $page = "main";
 require('./search-filter.php');
 require 'html/document_before.php'; ?>

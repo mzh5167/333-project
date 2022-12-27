@@ -1,4 +1,7 @@
 <?php
+require_once 'util/access.php';
+admin_only();
+
 require('connection.php');
 require('util/place-input.php');
 $showStatus = false;

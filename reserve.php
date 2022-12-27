@@ -2,9 +2,8 @@
 // TODO: validation
 
 session_start();
-if (!isset($_SESSION['userId'])) {
-  header('location:login.php');
-}
+require_once 'util/access.php';
+customer_only();
 
 require("util/reserve_logic.php");
 

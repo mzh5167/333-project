@@ -1,6 +1,14 @@
 <?php
 include('livesearch.php');
 include('search-filter.php');
+
+// Redirect to admin home
+require_once 'util/access.php';
+if (isAdmin()) {
+  header('location: admin-index.php');
+  die();
+}
+
 ?>
 
 <?php require 'html/document_before.php' ?>

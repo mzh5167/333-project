@@ -1,6 +1,9 @@
 <?php
 session_start();
 
+require_once 'util/access.php';
+customer_only();
+
 require "util/validate.php";
 require "util/forms.php";
 
